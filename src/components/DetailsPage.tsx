@@ -7,7 +7,7 @@ const DetailsPage = () => {
   const params = useParams();
   console.log(params.articleID);
 
-  const [article, setArticle] = useState<singleArticle[]>([]);
+  const [article, setArticle] = useState<singleArticle | null>(null);
 
   useEffect(() => {
     fetchSingleArticle();
@@ -31,7 +31,7 @@ const DetailsPage = () => {
     }
   };
 
-  return <Container>{typeof article !== undefined && <h1>{}</h1>}</Container>;
+  return <Container>{article !== null && <h1>{article.title}</h1>}</Container>;
 };
 
 export default DetailsPage;
