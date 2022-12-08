@@ -11,3 +11,5 @@ export interface singleArticle {
   launches: any[];
   events: any[];
 }
+
+export interface detailArticle {}
