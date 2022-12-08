@@ -1,6 +1,7 @@
 import { Col, Card } from "react-bootstrap";
 import { singleArticle } from "../interfaces";
 import { format } from "date-fns";
+import { Link } from "react-router-dom";
 
 interface ArticleProps {
   article: singleArticle;
@@ -16,7 +17,7 @@ const SingleArticle = ({ article }: ArticleProps) => {
           className="fluid"
           style={{ height: "400px" }}
         />
-        <Card.ImgOverlay>
+        <Card.ImgOverlay className="d-flex flex-column justify-content-center">
           <Card.Title>{article.title}</Card.Title>
           <Card.Text>
             This is a wider card with supporting text below as a natural lead-in

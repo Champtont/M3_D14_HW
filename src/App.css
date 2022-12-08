@@ -10,6 +10,15 @@ h1 {
   color: white;
 }
 
+.card-img-overlay {
+  background-color: #282c348c;
+  transition: background-color ease-in-out 1s;
+}
+.card-img-overlay:hover {
+  background-color: transparent;
+  border: solid white 2pt;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
