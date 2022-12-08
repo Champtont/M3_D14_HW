@@ -1,4 +1,5 @@
 import Container from "react-bootstrap/esm/Container";
+import { Card } from "react-bootstrap";
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { singleArticle } from "../interfaces";
@@ -31,7 +32,21 @@ const DetailsPage = () => {
     }
   };
 
-  return <Container>{article !== null && <h1>{article.title}</h1>}</Container>;
+  return (
+    <Container>
+      {article !== null && (
+        <>
+          <h1>{article.title}</h1>
+          <Card>
+            <Card.Img variant="top" src={article.imageUrl} />
+          </Card>
+          <div className="mt-1 p-info">
+            <p>{article.summary}</p>
+          </div>
+        </>
+      )}
+    </Container>
+  );
 };
 
 export default DetailsPage;
