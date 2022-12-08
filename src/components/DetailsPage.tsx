@@ -1,5 +1,5 @@
 import Container from "react-bootstrap/esm/Container";
-import { Card } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { singleArticle } from "../interfaces";
@@ -7,6 +7,8 @@ import { singleArticle } from "../interfaces";
 const DetailsPage = () => {
   const params = useParams();
   console.log(params.articleID);
+
+  const navigate = useNavigate();
 
   const [article, setArticle] = useState<singleArticle | null>(null);
 
@@ -33,7 +35,7 @@ const DetailsPage = () => {
   };
 
   return (
-    <Container>
+    <Container className="p-2">
       {article !== null && (
         <>
           <h1>{article.title}</h1>
@@ -43,6 +45,9 @@ const DetailsPage = () => {
           <div className="mt-1 p-info">
             <p>{article.summary}</p>
           </div>
+          <Button className="mt-1" variant="info" onClick={() => navigate("/")}>
+            Home
+          </Button>
         </>
       )}
     </Container>
